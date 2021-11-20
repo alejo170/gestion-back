@@ -6,12 +6,10 @@ const tiposProyecto = gql`
     descripcion: String!
     tipo: Enum_TipoObjetivo!
   }
-
   input crearObjetivo {
     descripcion: String!
     tipo: Enum_TipoObjetivo!
   }
-
   type Proyecto {
     _id: ID!
     nombre: String!
@@ -22,12 +20,12 @@ const tiposProyecto = gql`
     fase: Enum_FaseProyecto!
     lider: Usuario!
     objetivos: [Objetivo]
+    avances: [Avance]
+    inscripciones: [Inscripcion]
   }
-
   type Query {
     Proyectos: [Proyecto]
   }
-
   type Mutation {
     crearProyecto(
       nombre: String!
